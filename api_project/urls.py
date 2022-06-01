@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api_app.views import GetApi
+from api_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', GetApi.as_view(template_name='index.html'), name='Api_App'),
+    path('', views.home, name='home'),
 ]
