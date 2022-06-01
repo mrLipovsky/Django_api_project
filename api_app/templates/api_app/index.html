@@ -17,5 +17,34 @@
         </div>
     </div>
 </nav>
+<table class="table is-fullwidth is-striped is-bordered">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>IPv4 Address(es)</th>
+        <th>Id</th>
+        <th>Region</th>
+        <th>Memory</th>
+        <th>CPUs</th>
+        <th>Disk Size</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for droplet in droplets %}
+    <tr>
+        <th>{{ droplet.name }}</th>
+        {% for ip in droplet.networks.v4 %}
+        <td>{{ ip.ip_address }}</td>
+        {% endfor %}
+        <td>{{ droplet.id }}</td>
+        <td>{{ droplet.region.name }}</td>
+        <td>{{ droplet.memory }}</td>
+        <td>{{ droplet.vcpus }}</td>
+        <td>{{ droplet.disk }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
 </body>
 </html>
