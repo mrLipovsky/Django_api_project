@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DigitalOcean Droplets</title>
+</head>
+<body>
+  <h1>List of countries</h1>
+  {% for i in response %}
+  <strong>{{i.Country}} ,</strong>
+  {% endfor %}
+</body>
+</html>
